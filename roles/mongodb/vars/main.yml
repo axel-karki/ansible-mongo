@@ -1,0 +1,9 @@
+mongo_replica_set_name: rs0
+mongo_port: 27017
+
+admin_user: "admin"
+admin_pass: "123"
+
+app_user: "appuser"
+app_pass: "123"
+app_db: "appdb"

@@ -1,0 +1,7 @@
+- name: Initialize and configure MongoDB replica set
+  hosts: mongo1
+  become: yes
+  tasks:
+    - import_role:
+        name: mongodb
+        tasks_from: replica_set

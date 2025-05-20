@@ -1,0 +1,31 @@
+- name: Create admin user (only if not exists)
+  shell: |
+    mongosh admin --quiet --eval '
+      if (!db.getUser("{{ admin_user }}")) {
+        db.createUser({
+          user: "{{ admin_user }}",
+          pwd: "{{ admin_pass }}",
+          roles: [ { role: "root", db: "admin" } ]
+        });
+      } else {
+        print("Admin user already exists");
+      }
+    '
+  args:
+    executable: /bin/bash
+
+- name: Create application user (only if not exists)
+  shell: |
+    mongosh {{ app_db }} -u {{ admin_user }} -p {{ admin_pass }} --authenticationDatabase admin --quiet --eval '
+      if (!db.getUser("{{ app_user }}")) {
+        db.createUser({
+          user: "{{ app_user }}",
+          pwd: "{{ app_pass }}",
+          roles: [ { role: "readWrite", db: "{{ app_db }}" } ]
+        });
+      } else {
+        print("App user already exists");
+      }
+    '
+  args:
+    executable: /bin/bash

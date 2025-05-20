@@ -1,0 +1,27 @@
+- name: Initiate Replica Set
+  shell: |
+    mongosh admin -u {{ admin_user }} -p {{ admin_pass }} --authenticationDatabase admin --quiet --eval '
+      rs.initiate({
+        _id: "{{ mongo_replica_set_name }}",
+        members: [
+          { _id: 0, host: "10.0.0.13:27017" },
+          { _id: 1, host: "10.0.0.14:27017" },
+          { _id: 2, host: "10.0.0.15:27017" }
+        ]
+      });
+    '
+  args:
+    executable: /bin/bash
+  register: rs_init
+  changed_when: "'already initiated' not in rs_init.stdout"
+  args:
+    executable: /bin/bash
+  register: rs_init
+  changed_when: "'already initiated' not in rs_init.stdout"
+
+- name: Wait for replica set to stabilize
+  wait_for:
+    port: 27017
+    host: mongo1
+    delay: 10
+    timeout: 60

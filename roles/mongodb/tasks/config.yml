@@ -1,0 +1,16 @@
+- name: Copy MongoDB keyfile to nodes
+  copy:
+    src: mongo-keyfile
+    dest: /etc/mongo-keyfile
+    owner: mongodb
+    group: mongodb
+    mode: '0400'
+
+- name: Configure mongod.conf
+  template:
+    src: mongod.conf.j2
+    dest: /etc/mongod.conf
+    owner: mongodb
+    group: mongodb
+    mode: 0644
+  notify: Restart MongoDB

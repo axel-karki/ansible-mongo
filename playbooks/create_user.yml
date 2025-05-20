@@ -1,0 +1,7 @@
+- name: Create admin and app user
+  hosts: mongo1
+  become: yes
+  tasks:
+    - import_role:
+        name: mongodb
+        tasks_from: users

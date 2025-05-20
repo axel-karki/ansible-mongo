@@ -1,0 +1,5 @@
+- name: Install Mongodb on all replica set members
+  hosts: mongodb
+  become: yes
+  roles:
+    - mongodb

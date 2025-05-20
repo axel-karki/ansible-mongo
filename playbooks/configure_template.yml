@@ -1,0 +1,7 @@
+- name: Configure MongoDB config
+  hosts: mongodb
+  become: yes
+  tasks:
+    - import_role:
+        name: mongodb
+        tasks_from: config
