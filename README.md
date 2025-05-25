@@ -79,8 +79,6 @@ Defines MongoDB settings using Jinja2 variables for flexibility:
 
 ---
 
-Ensure these values reflect your actual VM details.
-
 ## Playbook Execution Order
 
 Run the playbooks in the following sequence to ensure proper MongoDB setup:
@@ -89,3 +87,10 @@ Run the playbooks in the following sequence to ensure proper MongoDB setup:
 2. `ansible-playbook playbooks/configure_template.yml` — Applies configuration templates.
 3. `ansible-playbook playbooks/create_user.yml` — Creates necessary MongoDB users.
 4. `ansible-playbook playbooks/configure_replica_set.yml` — Sets up the MongoDB replica set.
+
+---
+
+### High Availability (HA) Setup
+HA is achieved by configuring a MongoDB replica set with three members on different hosts. This setup ensures data redundancy and automatic failover in case one node becomes unavailable.
+
+![image](https://github.com/user-attachments/assets/9316c2d7-b453-4b39-8f3f-4a28b6f5a104)
