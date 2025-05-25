@@ -94,3 +94,4 @@ Run the playbooks in the following sequence to ensure proper MongoDB setup:
 HA is achieved by configuring a MongoDB replica set with three members on different hosts. This setup ensures data redundancy and automatic failover in case one node becomes unavailable.
 
 ![image](https://github.com/user-attachments/assets/9316c2d7-b453-4b39-8f3f-4a28b6f5a104)
+<img width="305" alt="Screenshot 2025-05-26 at 5 07 42 AM" src="https://github.com/user-attachments/assets/f4d534ac-b2ee-4f61-9225-fd18df753f88" />
