@@ -95,3 +95,10 @@ HA is achieved by configuring a MongoDB replica set with three members on differ
 
 ![image](https://github.com/user-attachments/assets/9316c2d7-b453-4b39-8f3f-4a28b6f5a104)
 <img width="305" alt="Screenshot 2025-05-26 at 5 07 42 AM" src="https://github.com/user-attachments/assets/f4d534ac-b2ee-4f61-9225-fd18df753f88" />
+
+![Screenshot 2025-05-26 at 4 49 40 PM](https://github.com/user-attachments/assets/7659b31c-18ac-4860-ab1a-4f05cc1bac3a)
+
+![Screenshot 2025-05-26 at 4 51 03 PM](https://github.com/user-attachments/assets/a51f846a-a72e-484d-b45b-096ccbd33831)
+
+![Screenshot 2025-05-26 at 4 51 19 PM](https://github.com/user-attachments/assets/60d470f6-d04c-454e-959b-ef66b26c8b0a)
+
